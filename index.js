@@ -1,5 +1,6 @@
 import ad from "active-data";
 import {h, thunk, init as snabbdomInit} from "snabbdom";
+import keycode from "keycode-js";
 import snabbdomClasses from "snabbdom/modules/class";
 import snabbdomAttrs from "snabbdom/modules/attributes";
 import snabbdomProps from "snabbdom/modules/props";
@@ -120,7 +121,7 @@ class TodoListView extends View {
 				h("input#new-todo.new-todo", {
 					props: {placeholder: "What needs to be done?", value: model.editingTitle},
 					on: {keydown: event => {
-						if (event.keyCode === 13) {
+						if (event.keyCode === keycode.KEY_RETURN) {
 							this.addItem(event.currentTarget.value);
 							event.currentTarget.value = "";
 						}
@@ -232,7 +233,7 @@ class TodoListItemView extends View {
 				on: {
 					blur: () => this.cancelEdit(),
 					keydown: event => {
-						if (event.keyCode === 13) {
+						if (event.keyCode === keycode.KEY_RETURN) {
 							this.submitEdit(event.currentTarget.value);
 							event.currentTarget.value = "";
 						}
