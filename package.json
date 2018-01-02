@@ -1,6 +1,6 @@
 {
 	"name": "active-data-snabbdom-todomvc",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "",
 	"main": "index.js",
 	"dependencies": {
@@ -31,7 +31,7 @@
 		"sinon": "^2.2.0",
 		"tape": "^4.6.3",
 		"uglifyjs-webpack-plugin": "^0.4.1",
-		"va-release": "^1.0.14",
+		"va-release": "^1.0.15",
 		"webpack": "^2.5.1"
 	},
 	"scripts": {
