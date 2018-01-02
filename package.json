@@ -1,6 +1,6 @@
 {
 	"name": "active-data-snabbdom-todomvc",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "",
 	"main": "index.js",
 	"dependencies": {
@@ -12,6 +12,17 @@
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/forceuser/active-data-snabbdom-todomvc.git"
+	},
+	"va-release": {
+		"files": [
+			{
+				"cwd": "templates/",
+				"src": [
+					"**/*"
+				],
+				"dest": "./"
+			}
+		]
 	},
 	"devDependencies": {
 		"babel-core": "^6.24.0",
@@ -46,6 +57,7 @@
 		"patch-release": "npm test && va-release --version patch --github",
 		"minor-release": "npm test && va-release --version minor --github",
 		"major-release": "npm test && va-release --version major --github",
+		"build-templates": "va-release -t",
 		"build": "webpack --config ./build.config.js",
 		"serve": "http-server -a localhost -p 8061"
 	},
