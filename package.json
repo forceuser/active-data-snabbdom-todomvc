@@ -1,6 +1,6 @@
 {
 	"name": "active-data-snabbdom-todomvc",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "",
 	"main": "index.js",
 	"dependencies": {
@@ -8,6 +8,10 @@
 		"keycode-js": "0.0.4",
 		"snabbdom": "^0.6.9",
 		"todomvc-app-css": "^2.1.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/forceuser/active-data-snabbdom-todomvc.git"
 	},
 	"devDependencies": {
 		"babel-core": "^6.24.0",
