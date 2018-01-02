@@ -1,6 +1,6 @@
 {
 	"name": "active-data-snabbdom-todomvc",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "",
 	"main": "index.js",
 	"dependencies": {
@@ -54,9 +54,9 @@
 		"fix": "eslint --fix .",
 		"coverage": "codecov",
 		"release": "npm run patch-release",
-		"patch-release": "npm test && va-release --version patch --github",
-		"minor-release": "npm test && va-release --version minor --github",
-		"major-release": "npm test && va-release --version major --github",
+		"patch-release": "npm run build && npm test && va-release --version patch --github",
+		"minor-release": "npm run build && npm test && va-release --version minor --github",
+		"major-release": "npm run build && npm test && va-release --version major --github",
 		"build-templates": "va-release -t",
 		"build": "webpack --config ./build.config.js",
 		"serve": "http-server -a localhost -p 8061"

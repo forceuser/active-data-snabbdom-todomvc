@@ -956,7 +956,7 @@ var TodoListView = function (_View) {
 			}, [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__vdom__["a" /* h */])("header.header", [__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__vdom__["a" /* h */])("h1", "todos"), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__vdom__["a" /* h */])("input#new-todo.new-todo", {
 				props: { placeholder: "What needs to be done?", value: model.editingTitle },
 				on: { keydown: function keydown(event) {
-						if (event.keyCode === __WEBPACK_IMPORTED_MODULE_0_keycode_js___default.a.KEY_RETURN) {
+						if (event.keyCode === __WEBPACK_IMPORTED_MODULE_0_keycode_js___default.a.KEY_RETURN && event.currentTarget.value) {
 							_this3.addItem(event.currentTarget.value);
 							event.currentTarget.value = "";
 						}

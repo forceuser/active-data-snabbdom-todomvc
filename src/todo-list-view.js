@@ -46,7 +46,7 @@ export default class TodoListView extends View {
 				h("input#new-todo.new-todo", {
 					props: {placeholder: "What needs to be done?", value: model.editingTitle},
 					on: {keydown: event => {
-						if (event.keyCode === keycode.KEY_RETURN) {
+						if (event.keyCode === keycode.KEY_RETURN && event.currentTarget.value) {
 							this.addItem(event.currentTarget.value);
 							event.currentTarget.value = "";
 						}
