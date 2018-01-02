@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -72,17 +72,17 @@
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return patch; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_snabbdom__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_snabbdom__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_snabbdom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_snabbdom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_snabbdom_modules_class__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_snabbdom_modules_class__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_snabbdom_modules_class___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_snabbdom_modules_class__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_snabbdom_modules_attributes__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_snabbdom_modules_attributes__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_snabbdom_modules_attributes___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_snabbdom_modules_attributes__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_snabbdom_modules_props__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_snabbdom_modules_props__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_snabbdom_modules_props___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_snabbdom_modules_props__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_snabbdom_modules_style__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_snabbdom_modules_style__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_snabbdom_modules_style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_snabbdom_modules_style__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_snabbdom_modules_eventlisteners__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_snabbdom_modules_eventlisteners__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_snabbdom_modules_eventlisteners___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_snabbdom_modules_eventlisteners__);
 /* harmony reexport (binding) */ if(__webpack_require__.o(__WEBPACK_IMPORTED_MODULE_0_snabbdom__, "h")) __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0_snabbdom__["h"]; });
 
@@ -758,7 +758,7 @@ var View = function () {
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(10).default;
+module.exports = __webpack_require__(11).default;
 
 
 /***/ }),
@@ -864,8 +864,9 @@ exports.default = vnode;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_keycode_js__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_keycode_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_keycode_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__vdom__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__view__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__todo_list_item_view__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cache__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__view__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__todo_list_item_view__ = __webpack_require__(10);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -873,6 +874,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -912,7 +914,7 @@ var TodoListView = function (_View) {
 	}, {
 		key: "init",
 		value: function init() {
-			this.tasksCache = new Cache();
+			this.tasksCache = new __WEBPACK_IMPORTED_MODULE_2__cache__["a" /* default */]();
 		}
 	}, {
 		key: "removeItem",
@@ -973,7 +975,7 @@ var TodoListView = function (_View) {
 				attrs: { for: "toggle-all" }
 			}), __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__vdom__["a" /* h */])("ul.todo-list", {}, model.filtered.map(function (task) {
 				return _this3.tasksCache.get(task.id, function () {
-					return new __WEBPACK_IMPORTED_MODULE_3__todo_list_item_view__["a" /* default */]({
+					return new __WEBPACK_IMPORTED_MODULE_4__todo_list_item_view__["a" /* default */]({
 						model: task,
 						key: task.id,
 						onChange: function onChange() {
@@ -999,12 +1001,34 @@ var TodoListView = function (_View) {
 	}]);
 
 	return TodoListView;
-}(__WEBPACK_IMPORTED_MODULE_2__view__["a" /* default */]);
+}(__WEBPACK_IMPORTED_MODULE_3__view__["a" /* default */]);
 
 /* harmony default export */ __webpack_exports__["a"] = (TodoListView);
 
 /***/ }),
 /* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = Cache;
+function Cache() {
+	var _ = {};
+
+	return {
+		get: function get(key, createNew) {
+			if (_[key]) {
+				return _[key];
+			}
+			return _[key] = createNew();
+		},
+		remove: function remove(key) {
+			delete _[key];
+		}
+	};
+}
+
+/***/ }),
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1056,7 +1080,7 @@ window.addEventListener("hashchange", function () {
 new __WEBPACK_IMPORTED_MODULE_1__todo_list_view__["a" /* default */]({ domNode: document.querySelector(".todoapp"), model: data });
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1174,7 +1198,7 @@ var TodoListItemView = function (_View) {
 /* harmony default export */ __webpack_exports__["a"] = (TodoListItemView);
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1314,7 +1338,7 @@ exports.default = function () {
 }();
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1386,7 +1410,7 @@ exports.default = exports.htmlDomApi;
 //# sourceMappingURL=htmldomapi.js.map
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1459,7 +1483,7 @@ exports.default = exports.attributesModule;
 //# sourceMappingURL=attributes.js.map
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1490,7 +1514,7 @@ exports.default = exports.classModule;
 //# sourceMappingURL=class.js.map
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1591,7 +1615,7 @@ exports.default = exports.eventListenersModule;
 //# sourceMappingURL=eventlisteners.js.map
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1623,7 +1647,7 @@ exports.default = exports.propsModule;
 //# sourceMappingURL=props.js.map
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1715,7 +1739,7 @@ exports.default = exports.styleModule;
 //# sourceMappingURL=style.js.map
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1723,7 +1747,7 @@ exports.default = exports.styleModule;
 Object.defineProperty(exports, "__esModule", { value: true });
 var vnode_1 = __webpack_require__(6);
 var is = __webpack_require__(5);
-var htmldomapi_1 = __webpack_require__(11);
+var htmldomapi_1 = __webpack_require__(12);
 function isUndef(s) { return s === undefined; }
 function isDef(s) { return s !== undefined; }
 var emptyNode = vnode_1.default('', {}, [], undefined, undefined);
@@ -1748,7 +1772,7 @@ function createKeyToOldIdx(children, beginIdx, endIdx) {
 var hooks = ['create', 'update', 'remove', 'destroy', 'pre', 'post'];
 var h_1 = __webpack_require__(4);
 exports.h = h_1.h;
-var thunk_1 = __webpack_require__(18);
+var thunk_1 = __webpack_require__(19);
 exports.thunk = thunk_1.thunk;
 function init(modules, domApi) {
     var i, j, cbs = {};
@@ -2028,7 +2052,7 @@ exports.init = init;
 //# sourceMappingURL=snabbdom.js.map
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

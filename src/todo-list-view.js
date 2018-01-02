@@ -1,5 +1,6 @@
 import keycode from "keycode-js";
 import {h} from "./vdom";
+import Cache from "./cache";
 import View from "./view";
 import TodoListItemView from "./todo-list-item-view";
 
