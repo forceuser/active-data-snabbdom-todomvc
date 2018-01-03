@@ -1,11 +1,15 @@
 import {observable} from "active-data";
 import TodoListView from "./todo-list-view";
 
+function getFilterMode () {
+	return window.location.hash.substr(2) || "all";
+}
+
 const data = observable({
 	genId () {
 		return this.tasks.reduce((max, i) => Math.max(max, i.id), 0) + 1;
 	},
-	filter: "all",
+	filter: getFilterMode(),
 	tasks: localStorage.tasks ? JSON.parse(localStorage.tasks) : [],
 	get filtered () {
 		switch (this.filter) {
@@ -22,8 +26,6 @@ const data = observable({
 	}
 });
 
-window.addEventListener("hashchange", () => {
-	data.filter = window.location.hash.substr(2) || "all";
-});
+window.addEventListener("hashchange", () => data.filter = getFilterMode());
 
 new TodoListView({domNode: document.querySelector(".todoapp"), model: data});

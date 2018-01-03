@@ -1039,6 +1039,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
+function getFilterMode() {
+	return window.location.hash.substr(2) || "all";
+}
+
 var data = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_active_data__["observable"])({
 	genId: function genId() {
 		return this.tasks.reduce(function (max, i) {
@@ -1046,7 +1050,7 @@ var data = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_active_data__["obse
 		}, 0) + 1;
 	},
 
-	filter: "all",
+	filter: getFilterMode(),
 	tasks: localStorage.tasks ? JSON.parse(localStorage.tasks) : [],
 	get filtered() {
 		switch (this.filter) {
@@ -1074,7 +1078,7 @@ var data = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_active_data__["obse
 });
 
 window.addEventListener("hashchange", function () {
-	data.filter = window.location.hash.substr(2) || "all";
+	return data.filter = getFilterMode();
 });
 
 new __WEBPACK_IMPORTED_MODULE_1__todo_list_view__["a" /* default */]({ domNode: document.querySelector(".todoapp"), model: data });
